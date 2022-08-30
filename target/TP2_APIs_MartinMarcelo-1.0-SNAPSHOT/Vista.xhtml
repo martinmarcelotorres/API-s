@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <title>API DE MARVEL</title>
+    </h:head>
+
+    <h:body>
+        <h1>API DE MARVEL</h1>
+        <h:form id="marvel">
+            <p:inputText placeholder="Ingresa el nombre" value="#{avengersC.vengador.nombre}"/>
+            <p:commandButton value="Enviar" update="marvel text" actionListener="#{avengersC.llamar()}">
+
+            </p:commandButton>
+            <p:separator/>
+            <p:panelGrid columns="2" id="text">
+                <p:outputLabel value="N° Comics"/>
+                <p:outputLabel id="txtComics" value="#{avengersC.vengador.comic}" />
+                <p:outputLabel value="N° Series"/>
+                <p:outputLabel id="txtSeries" value="#{avengersC.vengador.series}" />
+                <p:outputLabel  value="N° Historias"/>
+                <p:outputLabel id="txtHistorias" value="#{avengersC.vengador.historias}" />
+                <p:outputLabel  value="N° Eventos"/>
+                <p:outputLabel id="txtEventos" value="#{avengersC.vengador.eventos}"/>
+            </p:panelGrid>
+            
+            <p:panelGrid columns="1">
+                <p:graphicImage width="250px" url="#{avengersC.vengador.url}"/>
+            </p:panelGrid>
+        </h:form>
+    </h:body>
+</html>
